@@ -8,8 +8,8 @@ export default class Main extends Component {
 
   componentDidMount() {
     fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=11109&key=${key}&type=restaurant&opennow=true`, {
-      method: 'GET'
-    })
+        method: 'GET'
+      })
     .then((results) => {
       results
       .json()

@@ -4,6 +4,7 @@ import { Route, Router, browserHistory } from 'react-router';
 
 import Main from './components/Main/Main';
 
+
 ReactDom.render(
   <Router history={browserHistory}>
     <Route path="/" component={Main} />
