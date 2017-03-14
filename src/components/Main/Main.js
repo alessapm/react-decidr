@@ -4,20 +4,20 @@ const key = process.env.key;
 export default class Main extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      zip: 0
+    }
   }
 
-  componentDidMount() {
-    fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=11109&key=${key}&type=restaurant&opennow=true`, {
-        method: 'GET'
-      })
-    .then((results) => {
-      results
-      .json()
-      .then((data) => {
-        console.log(data);
-      })
-    })
-  }
+handleChange(){
+
+}
+
+handleSubmit(){
+  // setState zip: zipInput
+  // fetch(`localhost:8000/restaurants/${this.state.zip}`)
+}
 
 
   render() {
