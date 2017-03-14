@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
+import Dotenv from 'dotenv-webpack'
 
 export default {
   resolve: {
@@ -21,6 +22,9 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+  // Try desperately and pathetically to run Dotenv
+    new Dotenv(),
+
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'), // Tells React to build in either dev or prod modes. https://facebook.github.io/react/downloads.html (See bottom)
       __DEV__: true

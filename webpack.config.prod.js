@@ -6,6 +6,7 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
+import Dotenv from 'dotenv-webpack'
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
@@ -25,6 +26,9 @@ export default {
     filename: '[name].[chunkhash].js'
   },
   plugins: [
+    // Try desperately and pathetically to run Dotenv
+    new Dotenv(),
+
     // Hash the files using MD5 so that their names change when the content changes.
     new WebpackMd5Hash(),
 
