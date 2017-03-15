@@ -30,6 +30,7 @@
   "author": "Howe, Lombard, Messineo, Hamel",
   "license": "MIT",
   "dependencies": {
+    "axios": "0.15.3",
     "dotenv-webpack": "1.4.3",
     "object-assign": "4.1.0",
     "react": "15.4.1",
