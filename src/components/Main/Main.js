@@ -1,46 +1,67 @@
 import React, { Component } from 'react';
+import update from 'react-addons-update';
+
+import Place from '../Place/Place';
 
 export default class Main extends Component {
   constructor(props) {
     super(props);
 
 
-  
-
-
     this.state = {
-      zip: 0
+      search: {
+        zip: '04038',
+        category: 'restaurants'
+      },
+      place: {}
     }
+
+    console.log(this.state);
   }
 
- componentDidMount() {
-    fetch(`http://localhost:8000/restaurants/zip/11103`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
+  handleChange(event){
+    let newState = update(this.state, {
+      search: {
+        $merge: {
+          [event.target.name]: event.target.value
+        }
       }
     })
-    .then(r => r.json()
-      .then((data) => {
-        console.log(data);
-      })
-    )
-    .catch((err) => console.log(err));
+
+    console.log(this.state);
+    this.setState(newState);
   }
-  
-handleChange(){
 
-}
 
-handleSubmit(){
-  // setState zip: zipInput
-  // fetch(`localhost:8000/restaurants/${this.state.zip}`)
-}
+  findPlaces() {
+  fetch(`http://localhost:8000/restaurants/zip/${this.state.search.zip}/restaurant`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(r => r.json()
+        .then((places) => {
+          const randomIndex = Math.floor(Math.random() * places.length);
+          console.log(randomIndex);
+          const place = places[randomIndex]
+          console.log(place)
+          this.setState({ place })
+        })
+      )
+      .catch((err) => console.log(err));
+  }
+
 
   render() {
     return(
       <div>
         <h1>Welcome To Decidr</h1>
+          <input maxLength='5' type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} placeholder="ZIP"/>
+          <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked></button>
+          <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}></button>
+          <button onClick={this.findPlaces.bind(this)}>FIND</button>
+          <Place place={this.state.place} />
       </div>
     )
   }
