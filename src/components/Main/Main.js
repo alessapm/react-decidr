@@ -62,6 +62,7 @@ export default class Main extends Component {
         <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked></button>
         <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}></button>
         <button onClick={this.findPlaces.bind(this)}>FIND</button>
+
         <Place place={this.state.place} />
       </div>
     )
