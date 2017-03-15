@@ -3,9 +3,17 @@ import React, { Component } from 'react';
 export default class Main extends Component {
   constructor(props) {
     super(props);
+
+
+  
+
+
+    this.state = {
+      zip: 0
+    }
   }
 
-  componentDidMount() {
+ componentDidMount() {
     fetch(`http://localhost:8000/restaurants/zip/11103`, {
       method: 'GET',
       headers: {
@@ -19,6 +27,15 @@ export default class Main extends Component {
     )
     .catch((err) => console.log(err));
   }
+  
+handleChange(){
+
+}
+
+handleSubmit(){
+  // setState zip: zipInput
+  // fetch(`localhost:8000/restaurants/${this.state.zip}`)
+}
 
   render() {
     return(

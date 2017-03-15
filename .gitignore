@@ -1,3 +1,6 @@
+
+.gitignore
+
 # Logs
 logs
 *.log*
@@ -40,4 +43,5 @@ dist
 .DS_Store
 
 # API keys
+>>>>>>> 43e0f7362d436e5d0e6f9877d33a81fd0e716557
 .env
