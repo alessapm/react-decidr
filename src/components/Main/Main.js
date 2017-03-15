@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import update from 'react-addons-update';
 
 import Place from '../Place/Place';
+import Nav from '../Nav/Nav';
 
 export default class Main extends Component {
   constructor(props) {
@@ -56,12 +57,12 @@ export default class Main extends Component {
   render() {
     return(
       <div>
-        <h1>Welcome To Decidr</h1>
-          <input maxLength='5' type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} placeholder="ZIP"/>
-          <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked></button>
-          <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}></button>
-          <button onClick={this.findPlaces.bind(this)}>FIND</button>
-          <Place place={this.state.place} />
+        <Nav />
+        <input maxLength='5' type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} placeholder="ZIP"/>
+        <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked></button>
+        <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}></button>
+        <button onClick={this.findPlaces.bind(this)}>FIND</button>
+        <Place place={this.state.place} />
       </div>
     )
   }
