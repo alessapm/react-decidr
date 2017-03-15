@@ -34,7 +34,7 @@ export default class Nav extends Component {
 
   render() {
     return(
-      <div>
+      <div className="header">
           <h1>Welcome To Decidr</h1>
           <p>{this.state.tagline}</p>
       </div>
