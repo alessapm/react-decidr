@@ -34,14 +34,12 @@ export default class Nav extends Component {
 
   render() {
     return(
-
-      <div className="header">
-          <h1>Decidr</h1>
-
       <div>
+        <div className="header">
+            <h1>Decidr</h1>
+        </div>
 
-
-          <p>{this.state.tagline}</p>
+        <p>{this.state.tagline}</p>
       </div>
     )
   }

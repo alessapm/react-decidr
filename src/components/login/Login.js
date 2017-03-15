@@ -26,6 +26,7 @@ handleChange(event){
 
 handleSubmit(event){
   event.preventDefault();
+  console.log('handleSubmit is firing');
 
     fetch('http://localhost:8000/users/login', {
       method: 'POST',
@@ -34,8 +35,13 @@ handleSubmit(event){
         "Content-Type": "application/json"
       }
     }).then((data) => {
+      console.log('you are in .then(data)');
+      console.log('data is: ', data);
       //data should contain our token
-      console.log(data)
+      data => data.json()
+      .then(token => {
+        console.log('#########', token)
+      })
     })
     .catch((err) => {
       console.log(err);
