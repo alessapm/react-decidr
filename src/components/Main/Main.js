@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-const key = process.env.key;
 
 export default class Main extends Component {
   constructor(props) {
@@ -7,18 +6,19 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=11109&key=${key}&type=restaurant&opennow=true`, {
-        method: 'GET'
-      })
-    .then((results) => {
-      results
-      .json()
+    fetch(`http://localhost:8000/restaurants/zip/11103`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(r => r.json()
       .then((data) => {
         console.log(data);
       })
-    })
+    )
+    .catch((err) => console.log(err));
   }
-
 
   render() {
     return(
