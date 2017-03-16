@@ -38,10 +38,11 @@ handleSubmit(event){
     }).then((data) => {
 
       data.json()
-      .then(tokenObj => {
-        console.log('#########', tokenObj)
-        window.localStorage.setItem('token', tokenObj.token);
-
+      .then(Obj => {
+        console.log('#########', Obj)
+        window.localStorage.setItem('token', Obj.token);
+        window.localStorage.setItem('firstname', Obj.firstname);
+        window.localStorage.setItem('lastname', Obj.lastname);
         browserHistory.push('/dashboard');
 
       })

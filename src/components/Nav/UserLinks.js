@@ -18,6 +18,8 @@ class UserLinks extends Component {
 
   Logout () {
   localStorage.removeItem('token');
+  localStorage.removeItem('firstname');
+  localStorage.removeItem('lastname');
   browserHistory.push('/');
   }
 
