@@ -35,13 +35,12 @@ handleSubmit(event){
         "Content-Type": "application/json"
       }
     }).then((data) => {
-      console.log(`you are in .then(data)`);
-      console.log('data is: ', data);
-      //data should contain our token
+
       data.json()
       .then(tokenObj => {
         console.log('#########', tokenObj)
         window.localStorage.setItem('token', tokenObj.token);
+
       })
     })
     .catch((err) => {
@@ -49,6 +48,8 @@ handleSubmit(event){
     })
 
 }//closes handleSubmit
+
+
 
 render() {
     return(
