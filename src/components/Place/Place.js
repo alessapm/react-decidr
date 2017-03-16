@@ -12,6 +12,14 @@ class Place extends Component {
 
   }
 
+price(n) {
+    let money = "";
+    for (var i=0; i < n; i++){
+      money += "$";
+    }
+    return money;
+  }
+
 
 
   render() {
@@ -21,6 +29,7 @@ class Place extends Component {
           <h1>{this.props.place.name}</h1>
           <p>{this.props.place.formatted_address}<br />
           Rating: {this.props.place.rating}</p>
+          <p>Price: {this.price(this.props.place.price_level)} </p>
         </div>
       )
     } else {
