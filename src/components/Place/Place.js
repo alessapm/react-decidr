@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+const mapKey = process.env.key;
+
 
 class Place extends Component {
   constructor(props) {
@@ -10,17 +12,16 @@ class Place extends Component {
 
     // this.setState({ place: this.props.place })
 
+    console.log('Mapkey:', mapKey);
   }
 
-price(n) {
+  price(n) {
     let money = "";
     for (var i=0; i < n; i++){
       money += "$";
     }
     return money;
   }
-
-
 
   render() {
     if (this.props.place.rating !== undefined) {
@@ -30,6 +31,12 @@ price(n) {
           <p>{this.props.place.formatted_address}<br />
           Rating: {this.props.place.rating}</p>
           <p>Price: {this.price(this.props.place.price_level)} </p>
+          <iframe
+          width="600"
+          height="450"
+          frameBorder="0"
+          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.geometry.location.lat},${this.props.place.geometry.location.lng}`} allowFullScreen>
+          </iframe>
         </div>
       )
     } else {
