@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import { browserHistory } from 'react-router';
 
-const myToken = process.env.myToken;
+// const myToken = process.env.myToken;
 
 
 export default class Dashboard extends Component {
@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
       }
     })
     .then((results) => {
-      results.json.then((content) => {
+      results.json().then((content) => {
         console.log('content.message: ', content.message)
       })
     })

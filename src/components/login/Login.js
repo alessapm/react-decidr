@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
+import { browserHistory } from 'react-router';
 
 import Nav from '../Nav/Nav';
 
@@ -40,7 +41,7 @@ handleSubmit(event){
       .then(tokenObj => {
         console.log('#########', tokenObj)
         window.localStorage.setItem('token', tokenObj.token);
-
+        browserHistory.push('/Dashboard');
       })
     })
     .catch((err) => {
