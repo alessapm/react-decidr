@@ -34,10 +34,10 @@ export default class Dashboard extends Component {
       })
     })
     .catch((err) => {
-      console.log('fail in catch');
+      console.log('fail in catch', err);
       browserHistory.push('/login');
     })
-  }; //closes componentDidMount
+  } //closes componentDidMount
 
 
 
