@@ -39,8 +39,9 @@ handleSubmit(event){
       console.log('data is: ', data);
       //data should contain our token
       data.json()
-      .then(token => {
-        console.log('#########', token)
+      .then(tokenObj => {
+        console.log('#########', tokenObj)
+        window.localStorage.setItem('token', tokenObj.token);
       })
     })
     .catch((err) => {
