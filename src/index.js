@@ -11,11 +11,13 @@ import "./vendor/css/skeleton_css/skeleton.css";
 
 import Main from './components/Main/Main';
 import Login from './components/login/Login';
+import Dashboard from './components/Dashboard/Dashboard.js'
 
 
 ReactDom.render(
   <Router history={browserHistory}>
     <Route path="/" component={Main} />
     <Route path="/login" component={Login} />
+    <Route path="/dashboard" component={Dashboard} />
   </Router>,
   document.getElementById('app'));
