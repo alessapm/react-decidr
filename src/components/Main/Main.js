@@ -58,9 +58,9 @@ export default class Main extends Component {
     return(
       <div>
         <Nav />
-        <input maxLength='5' type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} placeholder="ZIP"/>
-        <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked></button>
-        <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}></button>
+        <input maxLength="5" type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} placeholder="ZIP"/>
+        <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked>restaurant</button>
+        <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}>bar</button>
         <button onClick={this.findPlaces.bind(this)}>FIND</button>
 
         <Place place={this.state.place} />
