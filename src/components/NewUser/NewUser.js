@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
+import { browserHistory } from 'react-router';
 
 import Nav from '../Nav/Nav';
 
@@ -36,6 +37,7 @@ handleSubmit(event){
         "Content-Type": "application/json"
       }
     }).then(() => {
+      browserHistory.push('/login');
       console.log('new user created')
     })
     .catch((err) => {
@@ -51,26 +53,26 @@ render() {
         <h2>Welcome to Decidr</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <label>First Name:</label><br />
-          <input name='first_name'
+          <input name="first_name"
           onChange={this.handleChange.bind(this)}
           type='text' /><br /><br />
 
           <label>Last Name:</label><br />
-          <input name='last_name'
+          <input name="last_name"
           onChange={this.handleChange.bind(this)}
           type='text' /><br /><br />
 
           <label>Email: </label><br />
-          <input name='email'
+          <input name="email"
           onChange={this.handleChange.bind(this)}
           type='text' /><br /><br />
 
           <label>Password: </label><br />
-          <input name='password'
+          <input name="password"
           onChange={this.handleChange.bind(this)}
           type='password' /><br /><br />
 
-          <button type='submit'>Submit</button>
+          <button type="submit">Submit</button>
 
         </form>
 
