@@ -30,10 +30,13 @@ export default class Dashboard extends Component {
     })
     .then((results) => {
       results.json().then((content) => {
+
         console.log('content.message: ', content.message)
+
       })
     })
     .catch((err) => {
+      console.log('fail in catch');
       browserHistory.push('/login');
     })
   }; //closes componentDidMount
