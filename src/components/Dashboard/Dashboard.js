@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import { browserHistory } from 'react-router';
 
-// const myToken = process.env.myToken;
-
 
 export default class Dashboard extends Component {
   constructor(props) {
