@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserLinks from './UserLinks';
 
 export default class Nav extends Component {
   constructor() {
@@ -46,6 +47,7 @@ export default class Nav extends Component {
         <div className="header">
           <h1>Decidr</h1>
           <p>{this.state.tagline}</p>
+          <UserLinks />
         </div>
       </div>
     )

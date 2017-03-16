@@ -41,7 +41,9 @@ handleSubmit(event){
       .then(tokenObj => {
         console.log('#########', tokenObj)
         window.localStorage.setItem('token', tokenObj.token);
+
         browserHistory.push('/dashboard');
+
       })
     })
     .catch((err) => {
