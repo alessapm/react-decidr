@@ -35,10 +35,10 @@ handleSubmit(event){
         "Content-Type": "application/json"
       }
     }).then((data) => {
-      console.log('you are in .then(data)');
+      console.log(`you are in .then(data)`);
       console.log('data is: ', data);
       //data should contain our token
-      data => data.json()
+      data.json()
       .then(token => {
         console.log('#########', token)
       })
