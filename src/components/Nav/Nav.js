@@ -26,6 +26,7 @@ export default class Nav extends Component {
         'Free will is not a choice.',
         'CHOICE IS WASTED ON YOU.',
         'Debate ends',
+        'Bad things happen when you choose',
         'There can be only one'
       ],
       tagline: ''
@@ -46,7 +47,7 @@ export default class Nav extends Component {
 
           <div className="flexManWChild">
             <div className="titleImage strongBorder">
-              <Link to="/" className=""><h1>DECIDR</h1></Link>
+              <Link to="/" className="logoTitle"><h1 className="logoTitle">DECIDR</h1></Link>
             </div>
 
             <div className=" phraseGen " >
