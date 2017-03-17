@@ -10,7 +10,7 @@ export default class NewUser extends Component {
 
     this.state = {
       user: {}
-    }
+    };
   }
 
 
@@ -50,34 +50,43 @@ render() {
     return(
       <div>
         <Nav />
-        <h2>Welcome to Decidr</h2>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <label>First Name:</label><br />
-          <input name="first_name"
+
+
+
+  <loginForm>
+
+
+    <form onSubmit={this.handleSubmit.bind(this)}>
+
+          <label><h3 className="createHolderText">First Name:</h3></label>
+          <input className="createInput"  name="first_name"
           onChange={this.handleChange.bind(this)}
-          type='text' /><br /><br />
+          type='text' placeholder="  First Name" /><br /><br />
 
-          <label>Last Name:</label><br />
-          <input name="last_name"
+          <label><h3 className="createHolderText">Last Name:</h3></label>
+          <input className="createInput" name="last_name"
           onChange={this.handleChange.bind(this)}
-          type='text' /><br /><br />
+          type='text' placeholder="  Last Name" /><br /><br />
 
-          <label>Email: </label><br />
-          <input name="email"
+          <label><h3 className="createHolderText">E-mail:</h3></label>
+          <input className="createInput" name="email"
           onChange={this.handleChange.bind(this)}
-          type='text' /><br /><br />
+          type='text' placeholder="  Electronic Mail" /><br /><br />
 
-          <label>Password: </label><br />
-          <input name="password"
+          <label><h3 className="createHolderText">Password:</h3> </label>
+          <input className="createInput" name="password"
           onChange={this.handleChange.bind(this)}
-          type='password' /><br /><br />
+          type='password' placeholder="  Password" /><br /><br />
 
-          <button type="submit">Submit</button>
 
+          <div id="createSubmit" >
+            <button className="createInputSubmit" type="submit">Submit</button>
+          </div>
         </form>
+
+  </loginForm>
 
       </div>
     )
-}
-
+  }
 } //Closes component

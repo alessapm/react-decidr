@@ -82,13 +82,40 @@ header {
   box-shadow: 0 0 0 2px rgb( 155, 201, 199 );*/
 
 }
+.logoTitle {
+  color: black;
+  text-shadow: 2px 2px 4px #612B1F;
+  letter-spacing: 10px;
+  font-family: 'Russo One', sans-serif;
+}
+
+.logoTitle:link {
+
+  text-decoration: none;
+}
+
+.logoTitle:visited {
+   /* color: #F56334;*/
+}
+
+.logoTitle:hover {
+  color: #BA160C;
+ /* filter:saturate(140);*/
+}
+
+.logoTitle:active {
+ /* color: rgba(0,0,0,0.8);*/
+  text-decoration: none;
+}
 
 .titleImage {
   background-color: #F56334;
   text-align: center;
+  color: black;
   height: 10vh;
   width: 75vw;
   border-radius: 25px;
+  color: black;
   border: 5px grey ridge;
   text-shadow: 2px 2px 4px #612B1F;
   letter-spacing: 10px;
@@ -97,7 +124,9 @@ header {
 }
 
 .titleImage:hover {
-  filter:saturate(200);
+/*  filter:saturate(200);*/
+color: #9E4E47;
+filter: invert(75%);
 }
 
 .phraseGen {
@@ -332,6 +361,8 @@ displayResults {
   width: 30vw;
   height: 3vh;
   border-radius: 25px;
+  border: 3px black ridge;
+  line-height: 3px;
   background: #F56334;
   font-family: 'Undergrad-UltraThin', sans-serif;
 
