@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserLinks from './UserLinks';
+import { Link, browserHistory } from 'react-router';
 
 export default class Nav extends Component {
   constructor() {
@@ -41,16 +42,20 @@ export default class Nav extends Component {
       <div>
 
         <header>
+
+
           <div className="flexManWChild">
             <div className="titleImage strongBorder">
-              <h1>DECIDR</h1>
+              <Link to="/" className=""><h1>DECIDR</h1></Link>
             </div>
 
             <div className=" phraseGen " >
               <h2>{this.state.tagline}</h2>
             </div>
           </div>
+          <nav className="secNav">
             <UserLinks />
+          </nav>
         </header>
 
       </div>

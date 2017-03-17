@@ -34,7 +34,8 @@ class UserLinks extends Component {
     } else {
       return (
         <div>
-          <Link to="/login" className="hoverable loginModule">Signup/Login</Link>
+          <Link to="/login" className="hoverable loginModule">Login</Link>
+          <Link to="/new" className="hoverable loginModule">Create User</Link>
         </div>
       )
     }
