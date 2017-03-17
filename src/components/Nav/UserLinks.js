@@ -28,8 +28,8 @@ class UserLinks extends Component {
     if (this.state.loggedIn) {
       return (
         <div>
-          <button><Link to="/dashboard" className="hoverable loginModule">Dashboard</Link></button>
-          <button onClick={this.Logout.bind(this)} className="hoverable loginModule">Logout</button>
+          <Link to="/dashboard" className="hoverable loginModule">Dashboard</Link>
+          <Link to="/" onClick={this.Logout.bind(this)} className="hoverable loginModule">Logout</Link>
         </div>
       )
     } else {
