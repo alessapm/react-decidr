@@ -1,0 +1,8 @@
+
+@font-face {
+	font-family: 'Conv_RussoOne-Regular';
+	src: url('fonts/RussoOne-Regular.eot');
+	src: local('☺'), url('fonts/RussoOne-Regular.woff') format('woff'), url('fonts/RussoOne-Regular.ttf') format('truetype'), url('fonts/RussoOne-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

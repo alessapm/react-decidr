@@ -4,14 +4,16 @@ import { browserHistory } from 'react-router';
 
 import Nav from '../Nav/Nav';
 
-export default class Login extends Component {
+export default class NewUser extends Component {
   constructor(props){
     super(props);
 
     this.state = {
       user: {}
-    }
+    };
   }
+
+
 
 handleChange(event){
     let newState = update(this.state, {
@@ -27,25 +29,16 @@ handleChange(event){
 
 handleSubmit(event){
   event.preventDefault();
-  console.log('handleSubmit is firing');
 
-    fetch('http://localhost:8000/users/login', {
+    fetch('http://localhost:8000/users', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
         "Content-Type": "application/json"
       }
-    }).then((data) => {
-
-      data.json()
-      .then(Obj => {
-        console.log('#########', Obj)
-        window.localStorage.setItem('token', Obj.token);
-        window.localStorage.setItem('firstname', Obj.firstname);
-        window.localStorage.setItem('lastname', Obj.lastname);
-        browserHistory.push('/dashboard');
-
-      })
+    }).then(() => {
+      browserHistory.push('/login');
+      console.log('new user created')
     })
     .catch((err) => {
       console.log(err);
@@ -53,19 +46,28 @@ handleSubmit(event){
 
 }//closes handleSubmit
 
-
-
 render() {
     return(
       <div>
-
-
         <Nav />
 
-            <loginForm>
+
+
+  <loginForm>
+
 
     <form onSubmit={this.handleSubmit.bind(this)}>
-          <h1 className="loginTitle">LOGIN</h1>
+
+          <label><h3 className="createHolderText">First Name:</h3></label>
+          <input className="createInput"  name="first_name"
+          onChange={this.handleChange.bind(this)}
+          type='text' placeholder="  First Name" /><br /><br />
+
+          <label><h3 className="createHolderText">Last Name:</h3></label>
+          <input className="createInput" name="last_name"
+          onChange={this.handleChange.bind(this)}
+          type='text' placeholder="  Last Name" /><br /><br />
+
           <label><h3 className="createHolderText">E-mail:</h3></label>
           <input className="createInput" name="email"
           onChange={this.handleChange.bind(this)}
@@ -80,21 +82,11 @@ render() {
           <div id="createSubmit" >
             <button className="createInputSubmit" type="submit">Submit</button>
           </div>
+        </form>
 
-         </form>
+  </loginForm>
 
-      </loginForm>
-
-    </div>
-
-
-
-
-
-
-
-
+      </div>
     )
-}
-
-} //closes class Login
+  }
+} //Closes component
