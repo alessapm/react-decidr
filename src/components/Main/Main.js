@@ -33,7 +33,6 @@ export default class Main extends Component {
     console.log(this.state);
   }
 
-
   findPlaces() {
   fetch(`http://localhost:8000/restaurants/zip/${this.state.search.zip}/${this.state.search.category}`, {
         method: 'GET',
@@ -45,9 +44,10 @@ export default class Main extends Component {
         .then((places) => {
           const randomIndex = Math.floor(Math.random() * places.length);
           console.log(randomIndex);
-          const place = places[randomIndex]
-          console.log(place)
-          this.setState({ place })
+          const place = places[randomIndex];
+          console.log(place);
+
+          this.setState({ place });
         })
       )
       .catch((err) => console.log(err));

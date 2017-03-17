@@ -50,7 +50,12 @@ class Place extends Component {
   render() {
     console.log('PROPS: ', this.props)
 
+
     if (this.props.place.rating !== undefined) {
+
+      const name = this.props.place.name.replace(/&/g, '%26');
+      console.log(name);
+
       return (
         <div>
           <h1>{this.props.place.name}</h1>
@@ -61,7 +66,7 @@ class Place extends Component {
           width="600"
           height="450"
           frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.geometry.location.lat},${this.props.place.geometry.location.lng}`} allowFullScreen>
+          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${name}%20near%20${this.props.place.formatted_address}&center=${this.props.place.geometry.location.lat},${this.props.place.geometry.location.lng}`} allowFullScreen>
           </iframe>
 
           <button onClick={this.handleSubmit.bind(this)}>
