@@ -10,7 +10,6 @@ class Place extends Component {
       restaurant: {}
     };
 
-    console.log('Mapkey:', mapKey);
     console.log(this.props.place);
   }
 

@@ -20,6 +20,7 @@ class UserLinks extends Component {
   localStorage.removeItem('token');
   localStorage.removeItem('firstname');
   localStorage.removeItem('lastname');
+  localStorage.removeItem('user_id');
   browserHistory.push('/');
   }
 

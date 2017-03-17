@@ -7,7 +7,7 @@ titleImage
 strongBorder
 phraseGen
 loginModule
-searchBar
+searchbarflex
 search
 submit
 togggleBar
@@ -29,6 +29,10 @@ COLOR PALETTE: http://www.colourlovers.com/palette/1002423/for_the_betterment?c=
 
 
 */
+
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+
 
 body {
 
@@ -201,8 +205,9 @@ loginForm {
   filter: drop-shadow(8px 8px 10px red);
 }
 
-searchBar {
+searchbarflex {
   height: 10vh;
+  min-width: 60vw;
   display: flex;
   flex-direction: column;
   flex-flow: row;
@@ -307,6 +312,7 @@ displayResults {
   height: 5vh;
   background: #FBC042;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   flex-flow: row;
   justify-content: center;

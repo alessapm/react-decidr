@@ -65,7 +65,7 @@ render() {
 
             <loginForm>
 
-    <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <h1 className="loginTitle">LOGIN</h1>
           <label><h3 className="createHolderText">E-mail:</h3></label>
           <input className="createInput" name="email"
