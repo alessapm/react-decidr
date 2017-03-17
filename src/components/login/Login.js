@@ -43,6 +43,7 @@ handleSubmit(event){
         window.localStorage.setItem('token', Obj.token);
         window.localStorage.setItem('firstname', Obj.firstname);
         window.localStorage.setItem('lastname', Obj.lastname);
+        window.localStorage.setItem('user_id', Obj.id)
         browserHistory.push('/dashboard');
 
       })

@@ -11,13 +11,13 @@ export default class Main extends Component {
 
     this.state = {
       search: {
-        zip: '04038',
-        category: 'restaurants'
+        zip: '',
+        category: 'restaurant'
       },
       place: {}
     }
 
-    console.log(this.state);
+    this.state.place ? console.log(this.state) : console.log('Did not retrieve Place from API');
   }
 
   handleChange(event){
@@ -29,13 +29,13 @@ export default class Main extends Component {
       }
     })
 
+    this.setState(newState)
     console.log(this.state);
-    this.setState(newState);
   }
 
 
   findPlaces() {
-  fetch(`http://localhost:8000/restaurants/zip/${this.state.search.zip}/restaurant`, {
+  fetch(`http://localhost:8000/restaurants/zip/${this.state.search.zip}/${this.state.search.category}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -59,8 +59,8 @@ export default class Main extends Component {
       <div>
         <Nav />
         <input maxLength="5" type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} placeholder="ZIP"/>
-        <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked>restaurant</button>
-        <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}>bar</button>
+        <button name="category" value="restaurant" onClick={this.handleChange.bind(this)}>restaurant</button>
+        <button name="category" value="bar" onClick={this.handleChange.bind(this)}>bar</button>
         <button onClick={this.findPlaces.bind(this)}>FIND</button>
 
         <Place place={this.state.place} />

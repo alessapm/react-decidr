@@ -13,6 +13,7 @@ class Place extends Component {
     // this.setState({ place: this.props.place })
 
     console.log('Mapkey:', mapKey);
+    console.log(this.props.place);
   }
 
   price(n) {
