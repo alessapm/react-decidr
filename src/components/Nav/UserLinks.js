@@ -27,14 +27,15 @@ class UserLinks extends Component {
     if (this.state.loggedIn) {
       return (
         <div>
-          <button><Link to="/dashboard">Dashboard</Link></button>
-          <button onClick={this.Logout.bind(this)}>Logout</button>
+          <button><Link to="/dashboard" className="hoverable loginModule">Dashboard</Link></button>
+          <button onClick={this.Logout.bind(this)} className="hoverable loginModule">Logout</button>
         </div>
       )
     } else {
       return (
         <div>
-          <Link to="/login">Signup/Login</Link>
+          <Link to="/login" className="hoverable loginModule">Login</Link>
+          <Link to="/new" className="hoverable loginModule">Create User</Link>
         </div>
       )
     }
