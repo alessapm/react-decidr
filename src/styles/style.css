@@ -306,6 +306,20 @@ displayResults {
 
 }
 
+  .loginTitle {
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  filter:saturate(200);
+  color: #F56334;
+}
+/*.loginTitle:hover {
+  color: #F56334;
+  filter:saturate(200);
+}
+*/
+
+
+
 .createInput {
   width: 50vw;
   height: 3vh;
@@ -323,10 +337,13 @@ displayResults {
 
 
 }
+
 .createInputSubmit:hover {
 -webkit-box-shadow: 9px 10px 14px 0px rgba(0,0,0,0.74);
 -moz-box-shadow: 9px 10px 14px 0px rgba(0,0,0,0.74);
 box-shadow: 9px 10px 14px 0px rgba(0,0,0,0.74);
+filter:saturate(200);
+font-color: #F56334;
 }
 
 
