@@ -23,7 +23,9 @@ export default class Nav extends Component {
         'Free will, Schmee Will',
         'Single Option dining',
         'Free will is not a choice.',
-        'CHOICE IS WASTED ON YOU.'
+        'CHOICE IS WASTED ON YOU.',
+        'Debate ends',
+        'There can be only one'
       ],
       tagline: ''
     }
