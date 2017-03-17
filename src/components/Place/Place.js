@@ -10,10 +10,11 @@ class Place extends Component {
       restaurant: {}
     };
 
-    this.setState({ restaurant: this.props.place })
+
 
     // console.log('Mapkey:', mapKey);
   }
+
 
   price(n) {
     let money = "";
@@ -29,6 +30,8 @@ class Place extends Component {
 
   handleSubmit(event){
     event.preventDefault();
+
+    this.setState({ restaurant: this.props.place });
 
     fetch(`http://localhost:8000/restaurants/${localStorage.user_id}`, {
       method: 'POST',
@@ -46,6 +49,8 @@ class Place extends Component {
 
 
   render() {
+    console.log('PROPS: ', this.props)
+
     if (this.props.place.rating !== undefined) {
       return (
         <div>
