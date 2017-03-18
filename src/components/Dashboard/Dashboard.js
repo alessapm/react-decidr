@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+
 import Nav from '../Nav/Nav';
 import { browserHistory } from 'react-router';
+import Place from '../Place/Place'
 
 
+const mapKey = process.env.key;
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -45,10 +48,14 @@ export default class Dashboard extends Component {
 
   render () {
     return (
-      <div>
-        <Nav />
-        <h1>This is your dashboard</h1>
-      </div>
+  <div>
+    <Nav />
+    <div className="flexWCommentBox">
+    <Place />
+    <div classname="editButton">
+    </div>
+    </div>
+  </div>
     )
   }
 
