@@ -53,22 +53,52 @@ class Place extends Component {
 
     if (this.props.place.rating !== undefined) {
       return (
-        <div>
-          <h1>{this.props.place.name}</h1>
-          <p>{this.props.place.formatted_address}<br />
-          Rating: {this.props.place.rating}</p>
-          <p>Price: {this.price(this.props.place.price_level)} </p>
-          <iframe
-          width="600"
-          height="450"
-          frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.geometry.location.lat},${this.props.place.geometry.location.lng}`} allowFullScreen>
-          </iframe>
+      <div>
 
-          <button onClick={this.handleSubmit.bind(this)}>
+  <div id="container" className="flexChild columnParent trackSeven">
+
+    <div id="columnChild46481" className="flexChild restaurantName">
+        <h1 >{this.props.place.name}</h1>
+    </div>
+
+    <div id="columnChild59480" className="flexChild rowParent">
+      <div id="rowChild31757" className="flexChild columnParent">
+        <div id="columnChild64584" className="flexChild labelText"><h1 className="backgroundColors" class="labelText">{this.props.place.formatted_address}</h1></div>
+
+        <div id="columnChild74073" className="flexChild columnParent">
+          <div id="columnChild67924" className="flexChild rowParent">
+            <div id="rowChild70892" className="flexChild labelText priceRating priceRatingFixed" ><h2>Rating: {this.props.place.rating}/5</h2></div>
+
+            <div id="rowChild27798" className="flexChild labelText priceRating priceRatingFixed"><h2>Price: {this.price(this.props.place.price_level)}</h2></div>
+
+          <favoritebutton className="offsetClass" >
+          <button className="shimmer"  onClick={this.handleSubmit.bind(this)}>
             Favorite
           </button>
+          </favoritebutton>
+
+          </div>
         </div>
+      </div>
+
+      <div id="rowChild78008" className="flexChild">
+          <iframe className="mapcontain"
+          width="350px"
+          height="350px"
+          frameBorder="0"
+          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.geometry.location.lat},${this.props.place.geometry.location.lng}`} allowFullScreen>
+        </iframe>
+         <div>
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+ </div>
+</div>
       )
     } else {
       return(<div></div>)
