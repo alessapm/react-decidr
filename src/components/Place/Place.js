@@ -6,24 +6,51 @@ class Place extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   place: {}
-    // };
+    this.state = {
+      restaurant: {}
+    };
 
-    // this.setState({ place: this.props.place })
 
-    console.log('Mapkey:', mapKey);
+
+    // console.log('Mapkey:', mapKey);
   }
+
 
   price(n) {
     let money = "";
-    for (var i=0; i < n; i++){
-      money += "$";
-    }
+     if (!n) {
+        money = "unavailable"
+      } else {
+        for (var i=0; i < n; i++){
+          money += "$";
+        }
+      }
     return money;
   }
 
+  handleSubmit(event){
+    event.preventDefault();
+
+    this.setState({ restaurant: this.props.place });
+
+    fetch(`http://localhost:8000/restaurants/${localStorage.user_id}`, {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(() => {
+      console.log('something has been favorited')
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
+
   render() {
+    console.log('PROPS: ', this.props)
+
     if (this.props.place.rating !== undefined) {
       return (
         <div>
@@ -37,6 +64,10 @@ class Place extends Component {
           frameBorder="0"
           src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.geometry.location.lat},${this.props.place.geometry.location.lng}`} allowFullScreen>
           </iframe>
+
+          <button onClick={this.handleSubmit.bind(this)}>
+            Favorite
+          </button>
         </div>
       )
     } else {
