@@ -43,13 +43,14 @@ export default class Dashboard extends Component {
           favorites.json().then((fav) => {
              console.log('***fav: ', fav);
 
-            this.setState({
-              favorites: fav,
-              place: fav[0],
-              lat: fav[0].lat,
-              lng: fav[0].lng
-            });
-
+            if(fav) {
+              this.setState({
+                favorites: fav,
+                place: fav[0],
+                lat: fav[0].lat,
+                lng: fav[0].lng
+              });
+            };
           })
         })
       })
