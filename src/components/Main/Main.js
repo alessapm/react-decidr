@@ -11,7 +11,7 @@ export default class Main extends Component {
 
     this.state = {
       search: {
-        zip: '04038',
+        zip: '',
         category: 'restaurant'
       },
       place: {}
@@ -94,6 +94,3 @@ export default class Main extends Component {
     )
   }
 }
-
-
-
