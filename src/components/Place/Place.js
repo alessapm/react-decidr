@@ -7,11 +7,17 @@ class Place extends Component {
     super(props);
 
     this.state = {
-      restaurant: {},
-      place: {}
+      restaurant: {}
     };
 
+
     console.log(this.props.place);
+  }
+
+
+  componentDidMount() {
+    this.setState({ restaurant: this.props.place });
+    console.log(this.state);
   }
 
 
@@ -26,6 +32,7 @@ class Place extends Component {
       }
     return money;
   }
+
 
   handleSubmit(event){
     event.preventDefault();

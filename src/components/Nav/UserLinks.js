@@ -29,7 +29,7 @@ class UserLinks extends Component {
       return (
         <div>
           <Link to="/dashboard" className="hoverable loginModule">Dashboard</Link>
-          <Link to="/" onClick={this.Logout.bind(this)} className="hoverable loginModule">Logout</Link>
+          <li onClick={this.Logout.bind(this)} className="hoverable loginModule">Logout</li>
         </div>
       )
     } else {

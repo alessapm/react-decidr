@@ -17,6 +17,7 @@ export default class Main extends Component {
       place: {}
     }
 
+    console.log(this.state);
     this.state.place ? console.log(this.state) : console.log('Did not retrieve Place from API');
   }
 
