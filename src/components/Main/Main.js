@@ -64,10 +64,8 @@ export default class Main extends Component {
 
           <div id="search">
             <div id="zipBar" >
-              <form action="POST" >
                 <label name="zipCode" className="toggleHolderText "></label>
                 <input className="zipInput" type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} maxLength="5" placeholder="ENTER ZIP NOW." />
-              </form>
 
             </div>
 

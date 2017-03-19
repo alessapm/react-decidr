@@ -6,20 +6,8 @@ class Place extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      restaurant: {}
-    };
 
-
-    console.log(this.props.place);
   }
-
-
-  componentDidMount() {
-    this.setState({ restaurant: this.props.place });
-    console.log(this.state);
-  }
-
 
   price(n) {
     let money = "";
@@ -37,11 +25,11 @@ class Place extends Component {
   handleSubmit(event){
     event.preventDefault();
 
-    this.setState({ restaurant: this.props.place });
+    this.setState({ restaurant: this.props.place});
 
     fetch(`http://localhost:8000/restaurants/${localStorage.user_id}`, {
       method: 'POST',
-      body: JSON.stringify(this.state),
+      body: JSON.stringify({ restaurant: this.props.place }),
       headers: {
         "Content-Type": "application/json"
       }
