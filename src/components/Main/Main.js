@@ -45,16 +45,20 @@ export default class Main extends Component {
       })
       .then(r => r.json()
         .then((places) => {
+          console.log('places: ', places);
+
           const randomIndex = Math.floor(Math.random() * places.length);
           console.log(randomIndex);
           const place = places[randomIndex];
           console.log(place);
 
+
           this.setState({
             place: place,
-            lat: place.geometry.location.lat,
-            lng: place.geometry.location.lng
              });
+
+          this.setState({ place });
+
         })
       )
       .catch((err) => console.log(err));
