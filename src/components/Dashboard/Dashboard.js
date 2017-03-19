@@ -11,7 +11,8 @@ export default class Dashboard extends Component {
     super(props);
 
     this.state = {
-      place: {}
+      place: {},
+      favorites: []
     }
   }
 
@@ -34,6 +35,20 @@ export default class Dashboard extends Component {
 
         console.log('content.message: ', content.message)
 
+        fetch(`http://localhost:8000/restaurants/${localStorage.user_id}`, {
+          method: 'GET'
+        })
+        .then((favorites) => {
+          favorites.json().then((fav) => {
+             console.log('***fav: ', fav);
+
+            this.setState({
+              favorites: fav,
+              place: fav[0]
+            });
+
+          })
+        })
       })
     })
     .catch((err) => {
@@ -42,9 +57,17 @@ export default class Dashboard extends Component {
     })
   } //closes componentDidMount
 
+  nextPlace() {
+   this.setState({
+    place: favorites
+   })
+  }
 
-
-
+  lastPlace() {
+    this.setState({
+      place: favorites
+    })
+  }
 
   render () {
     return (
@@ -52,7 +75,11 @@ export default class Dashboard extends Component {
     <Nav />
     <div className="flexWCommentBox">
     <Place place={this.state.place} />
-    <div classname="editButton">
+    <div className="editButton">
+    <div className="next-last-buttons">
+      <button onClick={this.nextPlace.bind(this)} />
+      <button onClick={this.lastPlace.bind(this)} />
+    </div>
     </div>
     </div>
   </div>
