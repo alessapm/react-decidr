@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comment from './comment';
 const mapKey = process.env.key;
 
 
@@ -6,6 +7,13 @@ class Place extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      userComment: ''
+    }
+
+    if(this.props.place.comment) {
+      this.setState({ userComment: this.props.place.comment });
+    }
   }
 
   price(n) {
@@ -44,7 +52,7 @@ class Place extends Component {
 
   render() {
     console.log('PROPS: ', this.props)
-
+    console.log('STATE:', this.state)
 
     if (this.props.lat) {
 
@@ -71,6 +79,7 @@ class Place extends Component {
 
             <div id="rowChild27798" className="flexChild labelText priceRating priceRatingFixed"><h2>Price: {this.price(this.props.place.price_level)}</h2></div>
 
+            <Comment place={this.props.place} />
           <favoritebutton className="offsetClass" >
           <button id="modalTrigger" className="shimmer"  onClick={this.handleSubmit.bind(this)}>
             Favorite
