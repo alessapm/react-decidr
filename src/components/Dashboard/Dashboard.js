@@ -81,6 +81,18 @@ export default class Dashboard extends Component {
    })
   }
 
+  deleteFavorite() {
+    const id = window.localStorage.getItem('user_id');
+    fetch(`http://localhost:8000/restaurants/${id}/${this.state.place.id}`, {
+      method: 'DELETE'
+    })
+    .then(() => {
+      console.log('You deleted this.')
+      this.state.favorites.length > 0 ? this.lastPlace() : this.setState({ place: {} });
+    })
+    .catch(err => console.log('LOOK WHAT YOU DID:', err));
+  }
+
   render () {
     return (
   <div>
@@ -91,6 +103,7 @@ export default class Dashboard extends Component {
     <div className="next-last-buttons">
       <button onClick={this.nextPlace.bind(this)}>NEXT</button>
       <button onClick={this.lastPlace.bind(this)}>LAST</button>
+      <button onClick={this.deleteFavorite.bind(this)}>DELETE</button>
     </div>
     </div>
     </div>
