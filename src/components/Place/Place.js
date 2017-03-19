@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comment from './comment';
 const mapKey = process.env.key;
 
 
@@ -6,6 +7,13 @@ class Place extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      userComment: ''
+    }
+
+    if(this.props.place.comment) {
+      this.setState({ userComment: this.props.place.comment });
+    }
   }
 
   price(n) {
@@ -44,9 +52,9 @@ class Place extends Component {
 
   render() {
     console.log('PROPS: ', this.props)
+    console.log('STATE:', this.state)
 
-
-    if (this.props.place.rating !== undefined) {
+    if (this.props.lat) {
 
       const name = this.props.place.name.replace(/&/g, '%26');
       console.log(name);
@@ -71,6 +79,7 @@ class Place extends Component {
 
             <div id="rowChild27798" className="flexChild labelText priceRating priceRatingFixed"><h2>Price: {this.price(this.props.place.price_level)}</h2></div>
 
+            <Comment place={this.props.place} />
           <favoritebutton className="offsetClass" >
           <button id="modalTrigger" className="shimmer"  onClick={this.handleSubmit.bind(this)}>
             Favorite
@@ -88,7 +97,7 @@ class Place extends Component {
           width="350px"
           height="350px"
           frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.lat},${this.props.place.lng}`} allowFullScreen>
+          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.lat},${this.props.lng}`} allowFullScreen>
         </iframe>
          <div>
 
