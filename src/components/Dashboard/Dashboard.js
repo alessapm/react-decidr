@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+
 import Nav from '../Nav/Nav';
 import { browserHistory } from 'react-router';
+import Place from '../Place/Place'
 
 
+const mapKey = process.env.key;
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      place: {}
     }
   }
 
@@ -45,10 +48,14 @@ export default class Dashboard extends Component {
 
   render () {
     return (
-      <div>
-        <Nav />
-        <h1>This is your dashboard</h1>
-      </div>
+  <div>
+    <Nav />
+    <div className="flexWCommentBox">
+    <Place place={this.state.place} />
+    <div classname="editButton">
+    </div>
+    </div>
+  </div>
     )
   }
 

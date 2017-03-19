@@ -43,6 +43,7 @@ handleSubmit(event){
         window.localStorage.setItem('token', Obj.token);
         window.localStorage.setItem('firstname', Obj.firstname);
         window.localStorage.setItem('lastname', Obj.lastname);
+        window.localStorage.setItem('user_id', Obj.id)
         browserHistory.push('/dashboard');
 
       })
@@ -64,7 +65,7 @@ render() {
 
             <loginForm>
 
-    <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <h1 className="loginTitle">LOGIN</h1>
           <label><h3 className="createHolderText">E-mail:</h3></label>
           <input className="createInput" name="email"
