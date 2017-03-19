@@ -14,7 +14,9 @@ export default class Main extends Component {
         zip: '',
         category: 'restaurant'
       },
-      place: {}
+      place: {},
+      lat: '',
+      lng: ''
     }
 
     console.log(this.state);
@@ -48,7 +50,11 @@ export default class Main extends Component {
           const place = places[randomIndex];
           console.log(place);
 
-          this.setState({ place });
+          this.setState({
+            place: place,
+            lat: place.geometry.location.lat,
+            lng: place.geometry.location.lng
+             });
         })
       )
       .catch((err) => console.log(err));
