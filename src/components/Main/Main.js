@@ -11,7 +11,7 @@ export default class Main extends Component {
 
     this.state = {
       search: {
-        zip: '04038',
+        zip: '',
         category: 'restaurant'
       },
       place: {}
@@ -43,11 +43,12 @@ export default class Main extends Component {
       })
       .then(r => r.json()
         .then((places) => {
-          const randomIndex = Math.floor(Math.random() * places.length);
-          console.log(randomIndex);
-          const place = places[randomIndex]
-          console.log(place)
-          this.setState({ place })
+          console.log('places: ', places);
+          // const randomIndex = Math.floor(Math.random() * places.length);
+          // console.log(randomIndex);
+          // const place = places[randomIndex]
+          // console.log(place)
+          // this.setState({ place })
         })
       )
       .catch((err) => console.log(err));
