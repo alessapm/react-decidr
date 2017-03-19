@@ -14,7 +14,10 @@ export default class Main extends Component {
         zip: '',
         category: 'restaurant'
       },
-      place: {},
+
+      place: {
+      },
+
       lat: '',
       lng: ''
     }
@@ -55,6 +58,8 @@ export default class Main extends Component {
 
           this.setState({
             place: place,
+            lat: place.geometry.location.lat,
+            lng: place.geometry.location.lng
              });
 
           this.setState({ place });
@@ -95,7 +100,7 @@ export default class Main extends Component {
 
       </searchbarflex>
 
-        <Place place={this.state.place} />
+        <Place place={this.state.place} lat={this.state.lat} lng={this.state.lng} />
       </div>
     )
   }

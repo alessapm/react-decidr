@@ -6,7 +6,6 @@ class Place extends Component {
   constructor(props) {
     super(props);
 
-
   }
 
   price(n) {
@@ -25,11 +24,11 @@ class Place extends Component {
   handleSubmit(event){
     event.preventDefault();
 
-    this.setState({ restaurant: this.props.place});
-
     fetch(`http://localhost:8000/restaurants/${localStorage.user_id}`, {
       method: 'POST',
-      body: JSON.stringify({ restaurant: this.props.place }),
+      body: JSON.stringify({
+        restaurant: this.props.place,
+      }),
       headers: {
         "Content-Type": "application/json"
       }
@@ -63,7 +62,7 @@ class Place extends Component {
 
     <div id="columnChild59480" className="flexChild rowParent">
       <div id="rowChild31757" className="flexChild columnParent">
-        <div id="columnChild64584" className="flexChild labelText"><h1 className="backgroundColors" class="labelText">{this.props.place.formatted_address}</h1></div>
+        <div id="columnChild64584" className="flexChild labelText"><h1 className="backgroundColors" className="labelText">{this.props.place.formatted_address}</h1></div>
 
 
         <div id="columnChild74073" className="flexChild columnParent">
@@ -89,7 +88,7 @@ class Place extends Component {
           width="350px"
           height="350px"
           frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.geometry.location.lat},${this.props.place.geometry.location.lng}`} allowFullScreen>
+          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.lat},${this.props.place.lng}`} allowFullScreen>
         </iframe>
          <div>
 
