@@ -5,14 +5,15 @@ import { browserHistory } from 'react-router';
 import Place from '../Place/Place'
 
 
-const mapKey = process.env.key;
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       place: {},
-      favorites: []
+      favorites: [],
+      lat: '',
+      lng: ''
     }
   }
 
@@ -44,7 +45,9 @@ export default class Dashboard extends Component {
 
             this.setState({
               favorites: fav,
-              place: fav[0]
+              place: fav[0],
+              lat: fav[0].lat,
+              lng: fav[0].lng
             });
 
           })
@@ -58,15 +61,23 @@ export default class Dashboard extends Component {
   } //closes componentDidMount
 
   nextPlace() {
+    let index = this.state.favorites.indexOf(this.state.place);
+    const endOfArray = this.state.favorites.length -1;
+    index === endOfArray ? index = 0 : index++;
+
    this.setState({
-    place: favorites
+    place: this.state.favorites[index]
    })
   }
 
   lastPlace() {
-    this.setState({
-      place: favorites
-    })
+    let index = this.state.favorites.indexOf(this.state.place);
+    const endOfArray = this.state.favorites.length -1;
+    index === 0 ? index == endOfArray : index--;
+
+   this.setState({
+    place: this.state.favorites[index]
+   })
   }
 
   render () {
@@ -77,8 +88,8 @@ export default class Dashboard extends Component {
     <Place place={this.state.place} />
     <div className="editButton">
     <div className="next-last-buttons">
-      <button onClick={this.nextPlace.bind(this)} />
-      <button onClick={this.lastPlace.bind(this)} />
+      <button onClick={this.nextPlace.bind(this)}>NEXT</button>
+      <button onClick={this.lastPlace.bind(this)}>LAST</button>
     </div>
     </div>
     </div>

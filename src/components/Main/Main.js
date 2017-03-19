@@ -14,7 +14,12 @@ export default class Main extends Component {
         zip: '',
         category: 'restaurant'
       },
-      place: {}
+
+      place: {
+      },
+
+      lat: '',
+      lng: ''
     }
 
     console.log(this.state);
@@ -49,6 +54,13 @@ export default class Main extends Component {
           console.log(randomIndex);
           const place = places[randomIndex];
           console.log(place);
+
+
+          this.setState({
+            place: place,
+            lat: place.geometry.location.lat,
+            lng: place.geometry.location.lng
+             });
 
           this.setState({ place });
 
@@ -88,7 +100,7 @@ export default class Main extends Component {
 
       </searchbarflex>
 
-        <Place place={this.state.place} />
+        <Place place={this.state.place} lat={this.state.lat} lng={this.state.lng} />
       </div>
     )
   }
