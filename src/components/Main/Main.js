@@ -54,6 +54,8 @@ export default class Main extends Component {
   }
 
 
+
+
   render() {
     return(
       <div>
@@ -94,6 +96,3 @@ export default class Main extends Component {
     )
   }
 }
-
-
-

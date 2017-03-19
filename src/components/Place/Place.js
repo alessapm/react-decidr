@@ -40,6 +40,7 @@ class Place extends Component {
         "Content-Type": "application/json"
       }
     }).then(() => {
+
       console.log('something has been favorited')
     })
     .catch((err) => {
@@ -72,10 +73,12 @@ class Place extends Component {
             <div id="rowChild27798" className="flexChild labelText priceRating priceRatingFixed"><h2>Price: {this.price(this.props.place.price_level)}</h2></div>
 
           <favoritebutton className="offsetClass" >
-          <button className="shimmer"  onClick={this.handleSubmit.bind(this)}>
+          <button id="modalTrigger" className="shimmer"  onClick={this.handleSubmit.bind(this)}>
             Favorite
           </button>
           </favoritebutton>
+
+          
 
           </div>
         </div>

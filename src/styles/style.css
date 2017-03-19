@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
 
 /*      CLASS LIST:
 flexManWChild
@@ -710,6 +710,8 @@ font-color: #F56334;
 
 
 /*IMPORTED MODULES W/ATTRIBUTION*/
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
 
 /*this shimmer was designed by alin guta and taken from: http://jsfiddle.net/brilliancedisplay/vu6hmL8q/*/
 @import url('http://fonts.googleapis.com/css?family=Alegreya+Sans:300');
@@ -862,4 +864,4 @@ input:checked + .slider:before {
   border-radius: 50%;
 }/*SWITCH END*/
 
-
+/*modal*/
