@@ -54,6 +54,11 @@ header {
   border: 8px black solid;
 }
 
+
+li {
+  display: inline;
+}
+
 .hoverable:link {
   color: grey;
   text-decoration: none;

@@ -7,13 +7,17 @@ class Place extends Component {
     super(props);
 
     this.state = {
-      restaurant: {},
-      place: {}
+      restaurant: {}
     };
 
 
+    console.log(this.props.place);
+  }
 
-    // console.log('Mapkey:', mapKey);
+
+  componentDidMount() {
+    this.setState({ restaurant: this.props.place });
+    console.log(this.state);
   }
 
 
@@ -28,6 +32,7 @@ class Place extends Component {
       }
     return money;
   }
+
 
   handleSubmit(event){
     event.preventDefault();
@@ -53,7 +58,12 @@ class Place extends Component {
   render() {
     console.log('PROPS: ', this.props)
 
+
     if (this.props.place.rating !== undefined) {
+
+      const name = this.props.place.name.replace(/&/g, '%26');
+      console.log(name);
+
       return (
       <div>
 
@@ -66,6 +76,7 @@ class Place extends Component {
     <div id="columnChild59480" className="flexChild rowParent">
       <div id="rowChild31757" className="flexChild columnParent">
         <div id="columnChild64584" className="flexChild labelText"><h1 className="backgroundColors" class="labelText">{this.props.place.formatted_address}</h1></div>
+
 
         <div id="columnChild74073" className="flexChild columnParent">
           <div id="columnChild67924" className="flexChild rowParent">
