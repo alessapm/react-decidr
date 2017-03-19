@@ -74,7 +74,7 @@ export default class Dashboard extends Component {
   lastPlace() {
     let index = this.state.favorites.indexOf(this.state.place);
     const endOfArray = this.state.favorites.length -1;
-    index === 0 ? index == endOfArray : index--;
+    index === 0 ? index = endOfArray : index--;
 
    this.setState({
     place: this.state.favorites[index]
@@ -86,7 +86,7 @@ export default class Dashboard extends Component {
   <div>
     <Nav />
     <div className="flexWCommentBox">
-    <Place place={this.state.place} />
+    <Place place={this.state.place} lat={this.state.lat} lng={this.state.lng}/>
     <div className="editButton">
     <div className="next-last-buttons">
       <button onClick={this.nextPlace.bind(this)}>NEXT</button>

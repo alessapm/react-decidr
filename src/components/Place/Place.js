@@ -46,7 +46,7 @@ class Place extends Component {
     console.log('PROPS: ', this.props)
 
 
-    if (this.props.place.rating !== undefined) {
+    if (this.props.lat) {
 
       const name = this.props.place.name.replace(/&/g, '%26');
       console.log(name);
@@ -88,7 +88,7 @@ class Place extends Component {
           width="350px"
           height="350px"
           frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.place.lat},${this.props.place.lng}`} allowFullScreen>
+          src={`https://www.google.com/maps/embed/v1/place?key=${mapKey}&q=${this.props.place.name}${this.props.place.formatted_address}&center=${this.props.lat},${this.props.lng}`} allowFullScreen>
         </iframe>
          <div>
 
