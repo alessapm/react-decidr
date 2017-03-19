@@ -51,7 +51,7 @@ export default class Dashboard extends Component {
   <div>
     <Nav />
     <div className="flexWCommentBox">
-    <Place />
+    <Place place={this.state.place} />
     <div classname="editButton">
     </div>
     </div>

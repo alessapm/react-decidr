@@ -7,7 +7,8 @@ class Place extends Component {
     super(props);
 
     this.state = {
-      restaurant: {}
+      restaurant: {},
+      place: {}
     };
 
 
@@ -78,7 +79,7 @@ class Place extends Component {
           </button>
           </favoritebutton>
 
-          
+
 
           </div>
         </div>
