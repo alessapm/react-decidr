@@ -134,12 +134,12 @@ export default class Dashboard extends Component {
     <div className="flexWCommentBox">
     <Place place={this.state.place} lat={this.state.lat} lng={this.state.lng}/>
     <div className="editButton">
-    <div className="next-last-buttons">
-      <button onClick={this.nextPlace.bind(this)}>NEXT</button>
-      <button onClick={this.lastPlace.bind(this)}>LAST</button>
-      <button onClick={this.deleteFavorite.bind(this)}>DELETE</button>
-        <input  name="comment" type="text" placeholder="Enter a comment" onChange={this.handleChange.bind(this)} value={this.state.comment} />
-        <button onClick={this.handleSubmit.bind(this)}>ADD COMMENT</button>
+    <div>
+      <button className="next-last-buttons" onClick={this.nextPlace.bind(this)}>NEXT</button>
+      <button className="next-last-buttons" onClick={this.lastPlace.bind(this)}>LAST</button>
+      <button className="next-last-buttons" onClick={this.deleteFavorite.bind(this)}>DELETE</button>
+        <input id="commentStyle" name="comment" type="text" placeholder="Enter a comment" onChange={this.handleChange.bind(this)} value={this.state.comment} />
+        <button className="next-last-buttons" onClick={this.handleSubmit.bind(this)}>ADD COMMENT</button>
     </div>
     </div>
     </div>

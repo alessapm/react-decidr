@@ -619,6 +619,7 @@ font-color: #F56334;
 }
 
 
+
 .labelText {
 
   font-family: 'Idealist Sans', sans-serif; /*<This is a beautiful free font designed by Glenn Jan from https://www.behance.net/gallery/8536015/Free-Idealist-Sans . The guy is awesome and a beautiful craftsman. */
@@ -653,12 +654,13 @@ font-color: #F56334;
 
 
 .editButton {
+  height: 114px;
   background-color: rgb(182, 145, 51);
   border-radius: 25px;
   border: 4px solid rgb(97, 43, 31);
   display: inline-block; cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-family: Arial;
+  color: rgb(0, 0, 0);
+  font-family: 'Undergrad-UltraThin', sans-serif;
   font-size: 17px;
   padding: 6px 29px;
   text-decoration: none;
@@ -667,6 +669,8 @@ font-color: #F56334;
 }
 
 .flexWCommentBox {
+  margin-left: 30px;
+  font-family: 'Undergrad-UltraThin', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -684,6 +688,12 @@ font-color: #F56334;
   -ms-flex-pack: start;
   justify-content: space-around;
 
+}
+
+.next-last-buttons{
+  border-radius: 25px;
+  border: 5px ridge black;
+  background: #F56334;
 }
 
 
