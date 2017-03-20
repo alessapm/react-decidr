@@ -62,6 +62,7 @@ Decidr uses a partnership of _React_ and _Express_ to render and run the web app
     -github
       -The group created two organizations: a main github page for the app as a whole (with two repos--one for express and one for react), and a second github page for design and styling, allowing team members to build independent sections without having to merge entire branches.
 
+
       -https://github.com/Decidr : github umbrella
   
       -https://github.com/front-end-template-decidr/front_end_collection/pull/4 :github front end
@@ -147,5 +148,7 @@ Production Wireframe Seven:
 //==//==//==//==//==//
 7. 
 ##Problems/Hurdles:
+
 Group Three faced significant hurdles in actualizing the web tokens in order to call the Google Places API. The group also chose to change APIs early on in the build process in order to use Google's much more capable map API and in the process ahd to redesign the schema and the website based on changing information that would be returned. Finally group communication proved a greater issue than had been anticipated, especially as members and assignments threatened to get siloed. However, a combination of steady hands and a strong adherence to both user stories and a project to-do-list helped to overcome many of these issues.
+
 
