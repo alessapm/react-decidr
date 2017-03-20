@@ -606,18 +606,23 @@ font-color: #F56334;
   background: #612B1F;
 
 }
+
+
 #favoriteButton {
-    width: 8vh;
-    height: 8vh;
-    margin: 5px;
-
-    border-width:5px;
-    border-style:groove;
-    background-color: #b69133; /*this color is called burnished gold*/
-    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*this is a hexagon*/
+  background-color:#b69133;
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+  border-radius:25px;
+  border:3px solid #612b1f;
+  display:inline-block;
+  cursor:pointer;
+  color:#fbc042;
+  font-family:Arial;
+  font-size:22px;
+  padding:11px 54px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
 }
-
 
 
 .labelText {
