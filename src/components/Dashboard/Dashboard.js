@@ -30,7 +30,7 @@ export default class Dashboard extends Component {
   } //closes componentDidMount
 
   getFavorites() {
-    fetch('http://localhost:8000/users/restrict', {
+    fetch('https://decidr-express.herokuapp.com/users/restrict', {
       method: 'GET',
       headers: {
         'Authorization': window.localStorage.getItem('token')
@@ -41,7 +41,7 @@ export default class Dashboard extends Component {
 
         console.log('content.message: ', content.message)
 
-        fetch(`http://localhost:8000/restaurants/${localStorage.user_id}`, {
+        fetch(`https://decidr-express.herokuapp.com/restaurants/${localStorage.user_id}`, {
           method: 'GET'
         })
         .then((favorites) => {
@@ -88,7 +88,7 @@ export default class Dashboard extends Component {
 
   deleteFavorite() {
     const id = window.localStorage.getItem('user_id');
-    fetch(`http://localhost:8000/restaurants/${id}/${this.state.place.id}`, {
+    fetch(`https://decidr-express.herokuapp.com/restaurants/${id}/${this.state.place.id}`, {
       method: 'DELETE'
     })
     .then(() => {
@@ -113,7 +113,7 @@ export default class Dashboard extends Component {
     event.preventDefault();
 
     const id = window.localStorage.getItem('user_id');
-    fetch(`http://localhost:8000/restaurants/${id}/${this.state.place.id}`, {
+    fetch(`https://decidr-express.herokuapp.com/restaurants/${id}/${this.state.place.id}`, {
       method: 'PUT',
       body: JSON.stringify({comment: this.state.comment}),
       headers: {
