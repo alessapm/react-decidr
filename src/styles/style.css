@@ -654,13 +654,13 @@ font-color: #F56334;
 
 
 .editButton {
-  height: 114px;
+  height: 130px;
   background-color: rgb(182, 145, 51);
   border-radius: 25px;
   border: 4px solid rgb(97, 43, 31);
   display: inline-block; cursor: pointer;
   color: rgb(0, 0, 0);
-  font-family: 'Undergrad-UltraThin', sans-serif;
+  font-family: 'Idealist Sans', sans-serif;;
   font-size: 17px;
   padding: 6px 29px;
   text-decoration: none;
@@ -669,8 +669,9 @@ font-color: #F56334;
 }
 
 .flexWCommentBox {
-  margin-left: 30px;
-  font-family: 'Undergrad-UltraThin', sans-serif;
+
+  font-family: 'Koliko Light', sans-serif;
+  /*font-weight: bold;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -698,6 +699,7 @@ font-color: #F56334;
 
 
 /*IRRITATING CSS STANDARD STUFF THAT IS TURNED OFF BELOW:*/
+
 #favoriteButton:hover {
   filter: drop-shadow(2px 1px 8px #BA160C);
 }
