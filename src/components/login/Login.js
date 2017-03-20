@@ -43,6 +43,7 @@ handleSubmit(event){
         window.localStorage.setItem('token', Obj.token);
         window.localStorage.setItem('firstname', Obj.firstname);
         window.localStorage.setItem('lastname', Obj.lastname);
+        window.localStorage.setItem('user_id', Obj.id)
         browserHistory.push('/dashboard');
 
       })
@@ -58,24 +59,42 @@ handleSubmit(event){
 render() {
     return(
       <div>
+
+
         <Nav />
-        <h2>Login to Decidr</h2>
+
+            <loginForm>
+
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <label>Email: </label><br />
-          <input name='email'
+          <h1 className="loginTitle">LOGIN</h1>
+          <label><h3 className="createHolderText">E-mail:</h3></label>
+          <input className="createInput" name="email"
           onChange={this.handleChange.bind(this)}
-          type='text' /><br /><br />
+          type='text' placeholder="  Electronic Mail" /><br /><br />
 
-          <label>Password: </label><br />
-          <input name='password'
+          <label><h3 className="createHolderText">Password:</h3> </label>
+          <input className="createInput" name="password"
           onChange={this.handleChange.bind(this)}
-          type='password' /><br /><br />
+          type='password' placeholder="  Password" /><br /><br />
 
-          <button type='submit'>Login</button>
 
-        </form>
+          <div id="createSubmit" >
+            <button className="createInputSubmit" type="submit">Submit</button>
+          </div>
 
-      </div>
+         </form>
+
+      </loginForm>
+
+    </div>
+
+
+
+
+
+
+
+
     )
 }
 

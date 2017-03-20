@@ -14,10 +14,16 @@ export default class Main extends Component {
         zip: '',
         category: 'restaurant'
       },
-      place: {}
+
+      place: {
+      },
+
+      lat: '',
+      lng: ''
     }
 
     console.log(this.state);
+    this.state.place ? console.log(this.state) : console.log('Did not retrieve Place from API');
   }
 
   handleChange(event){
@@ -29,10 +35,9 @@ export default class Main extends Component {
       }
     })
 
+    this.setState(newState)
     console.log(this.state);
-    this.setState(newState);
   }
-
 
   findPlaces() {
   fetch(`http://localhost:8000/restaurants/zip/${this.state.search.zip}/${this.state.search.category}`, {
@@ -43,11 +48,22 @@ export default class Main extends Component {
       })
       .then(r => r.json()
         .then((places) => {
+          console.log('places: ', places);
+
           const randomIndex = Math.floor(Math.random() * places.length);
           console.log(randomIndex);
-          const place = places[randomIndex]
-          console.log(place)
-          this.setState({ place })
+          const place = places[randomIndex];
+          console.log(place);
+
+
+          this.setState({
+            place: place,
+            lat: place.geometry.location.lat,
+            lng: place.geometry.location.lng
+             });
+
+          this.setState({ place });
+
         })
       )
       .catch((err) => console.log(err));
@@ -58,12 +74,33 @@ export default class Main extends Component {
     return(
       <div>
         <Nav />
-        <input maxLength="5" type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} placeholder="ZIP"/>
-        <button type="radio" name="category" value="restaurant" onClick={this.handleChange.bind(this)}  checked>restaurant</button>
-        <button type="radio" name="category" value="bar" onClick={this.handleChange.bind(this)}>bar</button>
-        <button onClick={this.findPlaces.bind(this)}>FIND</button>
 
-        <Place place={this.state.place} />
+        <searchbarflex>
+
+          <div id="search">
+            <div id="zipBar" >
+                <label name="zipCode" className="toggleHolderText "></label>
+                <input className="zipInput" type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} maxLength="5" placeholder="ENTER ZIP NOW." />
+
+            </div>
+
+            <div className="toggleHolder" id="toggleBar" > <h3 className="toggleHolderText">Restaurant</h3>
+              <label className="switch">
+                <input type="checkbox" />
+                <div className="slider round"></div>
+              </label>
+                <h3 className="toggleHolderText">Bars</h3>
+            </div>
+          </div>
+
+          <div >
+            <label name="submitButton" placeholder="DECID"></label>
+            <input id="submitButton" type="submit" value="" onClick={this.findPlaces.bind(this)} />
+          </div>
+
+      </searchbarflex>
+
+        <Place place={this.state.place} lat={this.state.lat} lng={this.state.lng} />
       </div>
     )
   }

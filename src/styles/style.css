@@ -1,3 +1,882 @@
-.header {
-  background-color: red;
+
+
+/*      CLASS LIST:
+flexManWChild
+hoverable
+titleImage
+strongBorder
+phraseGen
+loginModule
+searchbarflex
+search
+submit
+togggleBar
+toggleHolder
+toggleHolderText
+zipInput
+zipBar
+*/
+
+
+/*
+COLOR PALETTE: http://www.colourlovers.com/palette/1002423/for_the_betterment?c=1
+
+#FBE671 :'give and get': (a light wheat colored yellow);
+#FBC042 :'protection from...?': (a more orangish yellow);
+#F56334 :'go society!': (an orange-red---this will be primary accent color!)
+#9E4E47 :'Waiting Room': (an oxblood used for secondary accents);
+#612B1F :'Nigro LaChapelle': (a dark brown used for background);
+
+
+*/
+
+
+
+
+body {
+
+  background-color: rgba(214, 204, 169, .8);
+  margin: 1vw;
+
+
+
 }
+
+header {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  background-color: #BA160C;
+    border-radius: 25px;
+  border: 8px black solid;
+}
+
+
+li {
+  display: inline;
+}
+
+.hoverable:link {
+  color: grey;
+  text-decoration: none;
+}
+
+.hoverable:visited {
+    color: #F56334;
+}
+
+.hoverable:hover {
+  color: #F56334;
+  filter:saturate(200);
+}
+
+.hoverable:active {
+  color: rgba(0,0,0,0.8);
+  text-decoration: none;
+}
+
+
+.flexManWChild {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 25vh;
+  flex-grow: 1;
+  align-items: center;
+/*  border-radius: 25px;
+  border: 8px grey ridge;
+  box-shadow: 0 0 0 2px rgb( 155, 201, 199 );*/
+
+}
+.logoTitle {
+  color: black;
+  text-shadow: 2px 2px 4px #612B1F;
+  letter-spacing: 10px;
+  font-family: 'Russo One', sans-serif;
+}
+
+.logoTitle:link {
+
+  text-decoration: none;
+}
+
+.logoTitle:visited {
+   /* color: #F56334;*/
+}
+
+.logoTitle:hover {
+  color: #BA160C;
+ /* filter:saturate(140);*/
+}
+
+.logoTitle:active {
+ /* color: rgba(0,0,0,0.8);*/
+  text-decoration: none;
+}
+
+.titleImage {
+  background-color: #F56334;
+  text-align: center;
+  color: black;
+  height: 10vh;
+  width: 75vw;
+  border-radius: 25px;
+  color: black;
+/*  border: 5px grey ridge;*/
+  text-shadow: 2px 2px 4px #612B1F;
+  letter-spacing: 10px;
+  font-family: 'Russo One', sans-serif;
+
+}
+
+.titleImage:hover {
+/*  filter:saturate(200);*/
+color: #9E4E47;
+filter: invert(75%);
+}
+
+.phraseGen {
+  background-color: #FBC042;
+  text-align: center;
+  height: 6vh;
+  width: 45vw;
+  border-radius: 9px;
+  color: rgba(0,0,0,0.8);
+  border: 3px #FBC042 solid;
+  opacity: .80;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+
+
+/*  line-height: 3px;*/
+  font-size: 10px;
+}
+
+.phraseGen:hover {
+    -webkit-filter: invert(100%);
+    filter: invert(75%);
+
+}
+
+
+loginForm {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: center;
+  align-items: space-around;
+  height: 50vh;
+  padding: 2vh;
+
+}
+
+
+.secNav {
+  height: 3vh;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #612B1F;
+  border-radius: 0 0 25px 25px;
+
+}
+
+.loginModule {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-family: 'helvetica', sans-serif;
+  text-transform: lowercase;
+  color: rgba(0,0,0,0.8);
+  border-radius: 4px;
+  border-radius: 0 0 25px 25px;
+
+}
+
+.loginModule:hover {
+  filter: drop-shadow(8px 8px 10px red);
+}
+
+searchbarflex {
+  height: 10vh;
+  min-width: 60vw;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+/*  border: 5px grey dashed;*/
+  margin: 3vh;
+  /*box-shadow: inset 0px 8px 10px gray,
+         inset -10px 8px 15px gray, inset 10px 8px 15px gray;*/
+}
+
+#search {
+  height: 5vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #FBC042;
+  border-radius: 28px;
+  border: 5px ridge black;
+  box-shadow:  0px 8px 10px gray,
+          -10px 8px 15px gray,  10px 8px 15px gray;
+
+
+}
+
+#createSubmit {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+
+displayResults {
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+/*  border: 5px grey dashed;*/
+  margin: 3vh;
+}
+resultbox {
+  height: 60vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: rows;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: space-around;
+  border: 5px grey dashed;
+/*  margin: 3vh;*/
+}
+mapframe {
+  height: 60vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+/*  margin-top: 2vh;
+  margin-bottom: 2vh;*/
+
+}
+usernamegreeting {
+  text-align: center;
+  height: 6vh;
+  width: 45vw;
+  border-radius: 9px;
+  color: rgba(0,0,0,0.8);
+  border: 3px #FBC042 solid;
+  opacity: .80;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#submitButton {
+    width: 8vh;
+    height: 8vh;
+    margin: 5px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: rgb(63, 74, 187);
+    border-width:5px;
+    border-style:groove;
+
+}
+
+#submitButton:hover {
+  filter: drop-shadow(2px 1px 8px #BA160C);
+}
+
+
+
+.toggleHolder {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggleHolderText {
+  padding: 5px;
+  text-transform: lowercase;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+.zipInput::-webkit-input-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+.zipInput:-ms-input-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+.zipInput:-moz-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+.zipInput::-moz-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+
+
+
+
+#zipBar {
+
+
+  height: 5vh;
+  background: #FBC042;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+
+
+
+
+}
+
+.createHolderText {
+  padding: 5px;
+  text-transform: lowercase;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+#toggleBar {
+  height: 5vh;
+  border-radius: 25px;
+  border: 5px ridge black;
+  background: #F56334;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+  .loginTitle {
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  filter:saturate(200);
+  color: #F56334;
+}
+/*.loginTitle:hover {
+  color: #F56334;
+  filter:saturate(200);
+}
+*/
+
+
+
+.createInput {
+  width: 50vw;
+  height: 3vh;
+  border-radius: 25px;
+  padding: .5vh;
+
+}
+
+.createInputSubmit {
+  width: 30vw;
+  height: 3vh;
+  border-radius: 25px;
+  border: 3px black ridge;
+  line-height: 3px;
+  background: #F56334;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+
+
+}
+
+.createInputSubmit:hover {
+-webkit-box-shadow: 9px 10px 14px 0px rgba(0,0,0,0.74);
+-moz-box-shadow: 9px 10px 14px 0px rgba(0,0,0,0.74);
+box-shadow: 9px 10px 14px 0px rgba(0,0,0,0.74);
+filter:saturate(200);
+font-color: #F56334;
+}
+
+
+.createInput::-webkit-input-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+.createInput::-ms-input-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+.createInput::-moz-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+.createInput::-moz-placeholder {
+  font-family: 'Undergrad-UltraThin', sans-serif;
+}
+
+
+/*PLACES/DASHBOARD/FAVORITE DIVS AND CLASSES BELOW*/
+
+#flexcanvas{
+  width: 100%;
+  height: 65vh !important;
+/*  border: 5px dashed grey;*/
+}
+.rowParent, .columnParent{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+/*  border: 5px dashed grey;*/
+}
+
+.columnParent{
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+/*  border: 5px dashed grey;*/
+}
+
+.flexChild{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+ /* border: 5px dashed grey;*/
+}
+
+#columnChild67924{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; height: 15vh;
+ flex-direction: column;
+ align-items: space-around;
+  justify-content: baseline;
+
+
+
+
+}
+
+#rowChild70892 {
+
+    font-family: 'Idealist Sans', sans-serif;
+    height: 4vh;
+}
+
+#rowChild70892:hover {
+  filter: saturate(150);
+
+}
+
+#columnChild64584{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; height: 10vh;
+ font-family: 'Koliko Light', sans-serif;
+
+}
+
+#rowChild78008{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; width: 40vw;
+ display: inline-flex;
+ flex-direction: row;
+ align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 1vh;
+}
+
+#columnChild46481{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; height: 10vh;
+ font-family: 'Koliko Light', sans-serif;
+}
+
+#container{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; width: 80vw; height: 60vh; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center;
+}
+
+.mapcontain {
+  background-size: contain;
+  border: 4px groove #612B1F;
+}
+
+.price {
+  letter-spacing: 1vw;
+
+}
+
+.rating {
+
+
+}
+
+
+.backgroundColors {
+
+  color: #9E4E47;
+  text-align: center;
+  border: 4px #9E4E47 ridge;
+  font-size: 4vh;
+  font-family: 'helvetica', sans-serif;
+}
+
+.restaurantName {
+  text-align: center;
+  color: #9E4E47;
+
+  font-family: 'Idealist Sans', sans-serif;
+
+  padding: 1vh;
+/*  opacity: .80;*/
+  letter-spacing: 1vw;
+  text-transform: capitalize;
+  background: #612B1F;
+
+}
+#favoriteButton {
+    width: 8vh;
+    height: 8vh;
+    margin: 5px;
+
+    border-width:5px;
+    border-style:groove;
+    background-color: #b69133; /*this color is called burnished gold*/
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*this is a hexagon*/
+}
+
+
+
+.labelText {
+
+  font-family: 'Idealist Sans', sans-serif; /*<This is a beautiful free font designed by Glenn Jan from https://www.behance.net/gallery/8536015/Free-Idealist-Sans . The guy is awesome and a beautiful craftsman. */
+/*  background-color: #FBE671;*/
+  margin: 1vh;
+}
+
+.priceRating {
+  font-family: 'Idealist Sans', sans-serif;
+/*  text-transform: lowercase;*/
+/*  background-color: #FBE671;*/
+  margin: 1vh;
+  opacity: .67;
+  line-height: 5em;
+  /*opacity: .80;*/
+}
+
+
+.commentAreaClass {
+ font-family: 'Idealist Sans', sans-serif;
+  font-size: 110%;
+ /* background-color: #B8AD83; save for potential border uses*/
+  margin: 1vh;
+  word-wrap: break-word;
+/*  background-color: #FBE671;*/
+/*  opacity: .80;*/
+}
+
+.offsetClass {
+  margin-left: 1vh;
+}
+
+
+.editButton {
+  height: 114px;
+  background-color: rgb(182, 145, 51);
+  border-radius: 25px;
+  border: 4px solid rgb(97, 43, 31);
+  display: inline-block; cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-family: 'Undergrad-UltraThin', sans-serif;
+  font-size: 17px;
+  padding: 6px 29px;
+  text-decoration: none;
+  text-shadow: rgb(47, 102, 39) 0px 1px 0px;
+  margin: 1vh;
+}
+
+.flexWCommentBox {
+  margin-left: 30px;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: start;
+  justify-content: space-around;
+
+}
+
+.next-last-buttons{
+  border-radius: 25px;
+  border: 5px ridge black;
+  background: #F56334;
+}
+
+
+/*IRRITATING CSS STANDARD STUFF THAT IS TURNED OFF BELOW:*/
+#favoriteButton:hover {
+  filter: drop-shadow(2px 1px 8px #BA160C);
+}
+#submitButton:focus {
+  outline: 0;
+}
+#favoriteButton:focus {
+  outline:0;
+}
+.hoverable:focus {
+  outline:0;
+}
+
+.createInput {
+  outline:0;
+}
+
+.createInputSubmit {
+  outline:0;
+}
+
+.shimmer:focus {
+  outline:0;
+}
+
+
+/*IMPORTED MODULES W/ATTRIBUTION*/
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+/*this shimmer was designed by alin guta and taken from: http://jsfiddle.net/brilliancedisplay/vu6hmL8q/*/
+@import url('http://fonts.googleapis.com/css?family=Alegreya+Sans:300');
+
+.shimmer{
+    /* styling stuff */
+/*    font-family:"Alegreya Sans";*/
+    font-weight:300;
+    font-size:3em;
+    margin:0 auto;
+    padding: 0 40px;
+    text-align: center;
+    color: rgba(255,255,255,0.1);
+    filter: saturate(180);
+}
+    .shimmer {
+      /* the shimmer magic */
+      background: -webkit-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+      background: -moz-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+      background: gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+      -webkit-background-size: 125px 100%;
+      -moz-background-size: 125px 100%;
+      background-size: 125px 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-animation-name: shimmer;
+      -moz-animation-name: shimmer;
+      -webkit-animation-name: shimmer;
+      animation-name: shimmer;
+      -webkit-animation-duration: 6s;
+      -moz-animation-duration: 6s;
+      -webkit-animation-duration: 6s;
+      animation-duration: 6s;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-color: #222;
+    }
+
+    @-moz-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @-webkit-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @-o-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @-ms-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+     /*This switch was designed by and taken from: https://www.w3schools.com/howto/howto_css_switch.asp*/
+/*SWITCH START*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}/*SWITCH END*/
+
+/*modal*/

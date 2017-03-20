@@ -20,6 +20,7 @@ class UserLinks extends Component {
   localStorage.removeItem('token');
   localStorage.removeItem('firstname');
   localStorage.removeItem('lastname');
+  localStorage.removeItem('user_id');
   browserHistory.push('/');
   }
 
@@ -27,14 +28,15 @@ class UserLinks extends Component {
     if (this.state.loggedIn) {
       return (
         <div>
-          <button><Link to="/dashboard">Dashboard</Link></button>
-          <button onClick={this.Logout.bind(this)}>Logout</button>
+          <Link to="/dashboard" className="hoverable loginModule">Dashboard</Link>
+          <li onClick={this.Logout.bind(this)} className="hoverable loginModule">Logout</li>
         </div>
       )
     } else {
       return (
         <div>
-          <Link to="/login">Signup/Login</Link>
+          <Link to="/login" className="hoverable loginModule">Login</Link>
+          <Link to="/new" className="hoverable loginModule">Create User</Link>
         </div>
       )
     }
