@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
 
 /*      CLASS LIST:
 flexManWChild
@@ -30,13 +30,14 @@ COLOR PALETTE: http://www.colourlovers.com/palette/1002423/for_the_betterment?c=
 
 */
 
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
 
 
 
 body {
 
-  background-color: rgba(214, 204, 169, .89);
+  background-color: rgba(214, 204, 169, .8);
+  margin: 1vw;
+
 
 
 }
@@ -51,6 +52,11 @@ header {
   background-color: #BA160C;
     border-radius: 25px;
   border: 8px black solid;
+}
+
+
+li {
+  display: inline;
 }
 
 .hoverable:link {
@@ -122,7 +128,7 @@ header {
   width: 75vw;
   border-radius: 25px;
   color: black;
-  border: 5px grey ridge;
+/*  border: 5px grey ridge;*/
   text-shadow: 2px 2px 4px #612B1F;
   letter-spacing: 10px;
   font-family: 'Russo One', sans-serif;
@@ -215,6 +221,8 @@ searchbarflex {
   align-items: center;
 /*  border: 5px grey dashed;*/
   margin: 3vh;
+  /*box-shadow: inset 0px 8px 10px gray,
+         inset -10px 8px 15px gray, inset 10px 8px 15px gray;*/
 }
 
 #search {
@@ -228,6 +236,8 @@ searchbarflex {
   background: #FBC042;
   border-radius: 28px;
   border: 5px ridge black;
+  box-shadow:  0px 8px 10px gray,
+          -10px 8px 15px gray,  10px 8px 15px gray;
 
 
 }
@@ -250,6 +260,47 @@ displayResults {
   align-items: flex-end;
 /*  border: 5px grey dashed;*/
   margin: 3vh;
+}
+resultbox {
+  height: 60vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: rows;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: space-around;
+  border: 5px grey dashed;
+/*  margin: 3vh;*/
+}
+mapframe {
+  height: 60vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+/*  margin-top: 2vh;
+  margin-bottom: 2vh;*/
+
+}
+usernamegreeting {
+  text-align: center;
+  height: 6vh;
+  width: 45vw;
+  border-radius: 9px;
+  color: rgba(0,0,0,0.8);
+  border: 3px #FBC042 solid;
+  opacity: .80;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #submitButton {
@@ -403,7 +454,373 @@ font-color: #F56334;
 }
 
 
+/*PLACES/DASHBOARD/FAVORITE DIVS AND CLASSES BELOW*/
 
+#flexcanvas{
+  width: 100%;
+  height: 65vh !important;
+/*  border: 5px dashed grey;*/
+}
+.rowParent, .columnParent{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+/*  border: 5px dashed grey;*/
+}
+
+.columnParent{
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+/*  border: 5px dashed grey;*/
+}
+
+.flexChild{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+ /* border: 5px dashed grey;*/
+}
+
+#columnChild67924{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; height: 15vh;
+ flex-direction: column;
+ align-items: space-around;
+  justify-content: baseline;
+
+
+
+
+}
+
+#rowChild70892 {
+
+    font-family: 'Idealist Sans', sans-serif;
+    height: 4vh;
+}
+
+#rowChild70892:hover {
+  filter: saturate(150);
+
+}
+
+#columnChild64584{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; height: 10vh;
+ font-family: 'Koliko Light', sans-serif;
+
+}
+
+#rowChild78008{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; width: 40vw;
+ display: inline-flex;
+ flex-direction: row;
+ align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 1vh;
+}
+
+#columnChild46481{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; height: 10vh;
+ font-family: 'Koliko Light', sans-serif;
+}
+
+#container{
+ -webkit-box-flex: 0;
+ -webkit-flex: 0 0 auto;
+ -ms-flex: 0 0 auto;
+ flex: 0 0 auto; width: 80vw; height: 60vh; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center;
+}
+
+.mapcontain {
+  background-size: contain;
+  border: 4px groove #612B1F;
+}
+
+.price {
+  letter-spacing: 1vw;
+
+}
+
+.rating {
+
+
+}
+
+
+.backgroundColors {
+
+  color: #9E4E47;
+  text-align: center;
+  border: 4px #9E4E47 ridge;
+  font-size: 4vh;
+  font-family: 'helvetica', sans-serif;
+}
+
+.restaurantName {
+  text-align: center;
+  color: #9E4E47;
+
+  font-family: 'Idealist Sans', sans-serif;
+
+  padding: 1vh;
+/*  opacity: .80;*/
+  letter-spacing: 1vw;
+  text-transform: capitalize;
+  background: #612B1F;
+
+}
+#favoriteButton {
+    width: 8vh;
+    height: 8vh;
+    margin: 5px;
+
+    border-width:5px;
+    border-style:groove;
+    background-color: #b69133; /*this color is called burnished gold*/
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*this is a hexagon*/
+}
+
+
+
+.labelText {
+
+  font-family: 'Idealist Sans', sans-serif; /*<This is a beautiful free font designed by Glenn Jan from https://www.behance.net/gallery/8536015/Free-Idealist-Sans . The guy is awesome and a beautiful craftsman. */
+/*  background-color: #FBE671;*/
+  margin: 1vh;
+}
+
+.priceRating {
+  font-family: 'Idealist Sans', sans-serif;
+/*  text-transform: lowercase;*/
+/*  background-color: #FBE671;*/
+  margin: 1vh;
+  opacity: .67;
+  line-height: 5em;
+  /*opacity: .80;*/
+}
+
+
+.commentAreaClass {
+ font-family: 'Idealist Sans', sans-serif;
+  font-size: 110%;
+ /* background-color: #B8AD83; save for potential border uses*/
+  margin: 1vh;
+  word-wrap: break-word;
+/*  background-color: #FBE671;*/
+/*  opacity: .80;*/
+}
+
+.offsetClass {
+  margin-left: 1vh;
+}
+
+
+.editButton {
+  height: 114px;
+  background-color: rgb(182, 145, 51);
+  border-radius: 25px;
+  border: 4px solid rgb(97, 43, 31);
+  display: inline-block; cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-family: 'Undergrad-UltraThin', sans-serif;
+  font-size: 17px;
+  padding: 6px 29px;
+  text-decoration: none;
+  text-shadow: rgb(47, 102, 39) 0px 1px 0px;
+  margin: 1vh;
+}
+
+.flexWCommentBox {
+  margin-left: 30px;
+  font-family: 'Undergrad-UltraThin', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: start;
+  justify-content: space-around;
+
+}
+
+.next-last-buttons{
+  border-radius: 25px;
+  border: 5px ridge black;
+  background: #F56334;
+}
+
+
+/*IRRITATING CSS STANDARD STUFF THAT IS TURNED OFF BELOW:*/
+#favoriteButton:hover {
+  filter: drop-shadow(2px 1px 8px #BA160C);
+}
+#submitButton:focus {
+  outline: 0;
+}
+#favoriteButton:focus {
+  outline:0;
+}
+.hoverable:focus {
+  outline:0;
+}
+
+.createInput {
+  outline:0;
+}
+
+.createInputSubmit {
+  outline:0;
+}
+
+.shimmer:focus {
+  outline:0;
+}
+
+
+/*IMPORTED MODULES W/ATTRIBUTION*/
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+/*this shimmer was designed by alin guta and taken from: http://jsfiddle.net/brilliancedisplay/vu6hmL8q/*/
+@import url('http://fonts.googleapis.com/css?family=Alegreya+Sans:300');
+
+.shimmer{
+    /* styling stuff */
+/*    font-family:"Alegreya Sans";*/
+    font-weight:300;
+    font-size:3em;
+    margin:0 auto;
+    padding: 0 40px;
+    text-align: center;
+    color: rgba(255,255,255,0.1);
+    filter: saturate(180);
+}
+    .shimmer {
+      /* the shimmer magic */
+      background: -webkit-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+      background: -moz-gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+      background: gradient(linear,left top,right top,from(#222),to(#222),color-stop(.5,#fff));
+      -webkit-background-size: 125px 100%;
+      -moz-background-size: 125px 100%;
+      background-size: 125px 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-animation-name: shimmer;
+      -moz-animation-name: shimmer;
+      -webkit-animation-name: shimmer;
+      animation-name: shimmer;
+      -webkit-animation-duration: 6s;
+      -moz-animation-duration: 6s;
+      -webkit-animation-duration: 6s;
+      animation-duration: 6s;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-color: #222;
+    }
+
+    @-moz-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @-webkit-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @-o-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @-ms-keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: top left;
+      }
+
+      100% {
+        background-position: top right;
+      }
+    }
+
+     /*This switch was designed by and taken from: https://www.w3schools.com/howto/howto_css_switch.asp*/
 /*SWITCH START*/
 .switch {
   position: relative;
@@ -461,3 +878,5 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }/*SWITCH END*/
+
+/*modal*/

@@ -11,13 +11,19 @@ export default class Main extends Component {
 
     this.state = {
       search: {
-        zip: '04038',
-        category: 'restaurants'
+        zip: '',
+        category: 'restaurant'
       },
-      place: {}
+
+      place: {
+      },
+
+      lat: '',
+      lng: ''
     }
 
     console.log(this.state);
+    this.state.place ? console.log(this.state) : console.log('Did not retrieve Place from API');
   }
 
   handleChange(event){
@@ -29,13 +35,12 @@ export default class Main extends Component {
       }
     })
 
+    this.setState(newState)
     console.log(this.state);
-    this.setState(newState);
   }
 
-
   findPlaces() {
-  fetch(`http://localhost:8000/restaurants/zip/${this.state.search.zip}/restaurant`, {
+  fetch(`http://localhost:8000/restaurants/zip/${this.state.search.zip}/${this.state.search.category}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -43,11 +48,22 @@ export default class Main extends Component {
       })
       .then(r => r.json()
         .then((places) => {
+          console.log('places: ', places);
+
           const randomIndex = Math.floor(Math.random() * places.length);
           console.log(randomIndex);
-          const place = places[randomIndex]
-          console.log(place)
-          this.setState({ place })
+          const place = places[randomIndex];
+          console.log(place);
+
+
+          this.setState({
+            place: place,
+            lat: place.geometry.location.lat,
+            lng: place.geometry.location.lng
+             });
+
+          this.setState({ place });
+
         })
       )
       .catch((err) => console.log(err));
@@ -63,10 +79,8 @@ export default class Main extends Component {
 
           <div id="search">
             <div id="zipBar" >
-              <form action="POST" >
-                <label for="zipCode" className="toggleHolderText "></label>
+                <label name="zipCode" className="toggleHolderText "></label>
                 <input className="zipInput" type="text" name="zip" onChange={this.handleChange.bind(this)} value={this.state.search.zip} maxLength="5" placeholder="ENTER ZIP NOW." />
-              </form>
 
             </div>
 
@@ -80,16 +94,13 @@ export default class Main extends Component {
           </div>
 
           <div >
-            <label for="submitButton" placeholder="DECID"></label>
+            <label name="submitButton" placeholder="DECID"></label>
             <input id="submitButton" type="submit" value="" onClick={this.findPlaces.bind(this)} />
           </div>
 
       </searchbarflex>
 
-
-
-
-        <Place place={this.state.place} />
+        <Place place={this.state.place} lat={this.state.lat} lng={this.state.lng} />
       </div>
     )
   }
